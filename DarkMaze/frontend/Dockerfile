@@ -3,9 +3,6 @@ FROM python:3.11
 
 WORKDIR /app
 
-RUN useradd -m noramluser
-USER noramluser
-
 COPY src ./src
 COPY requirements.txt .
 
