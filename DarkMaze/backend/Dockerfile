@@ -1,10 +1,14 @@
 # TODO: Install the backend dependency package into the app folder inside the container.
 
-FROM python:3.11
+FROM python:3.11-slim
+
+RUN useradd -m noramluser
+USER noramluser
 
 WORKDIR /app
 
-COPY . .
+COPY src ./src
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
